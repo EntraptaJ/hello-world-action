@@ -13,11 +13,6 @@
     "arrowParens": "always",
     "semi": true
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "./installDeps.sh"
-    }
-  },
   "author": "Kristian Jones <me@kristianjones.dev>",
   "license": "ISC",
   "devDependencies": {
