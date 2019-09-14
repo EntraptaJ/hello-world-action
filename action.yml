@@ -1,0 +1,10 @@
+name: 'KFJ Hello World'
+description: 'Testing out GitHub NodeJS Actions'
+author: 'Kristian Jones'
+inputs:
+  input-1:
+    description: 'Testing Input #1'
+    default: 'hWorld'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
