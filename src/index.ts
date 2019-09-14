@@ -5,7 +5,7 @@ import { sync } from 'glob';
 import run from './run'
 
 async function helloWorld(): Promise<void> {
-  const filenames = sync(`${process.env.GITHUB_WORKSPACE}/**`);
+  const filenames = sync(`${process.env.GITHUB_WORKSPACE}/**/*`);
   console.log(filenames)
   for (const filename of filenames) {
     console.log(filename);
