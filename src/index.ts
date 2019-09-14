@@ -29,12 +29,20 @@ async function helloWorld(): Promise<void> {
           issue_number: pr.number,
           body: '`npm run test` has failed',
         });
-        setFailed('TEST FAILED');
+        setFailed('npm run test failed');
+      }
+      try {
+        await run(`npm run lint`);
+      } catch {
+        await octokit.issues.createComment({
+          owner: github.context.repo.owner,
+          repo: github.context.repo.repo,
+          issue_number: pr.number,
+          body: '`npm run lint` has failed',
+        });
+        setFailed('npm run lint failed');
       }
     }
-
-    const input1 = getInput('input-1');
-    console.log(`Input #1 is set to ${input1}`);
   } catch (error) {
     setFailed(error.message);
   }
