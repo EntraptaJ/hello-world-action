@@ -6,5 +6,5 @@ inputs:
     description: 'Testing Input #1'
     default: 'hWorld'
 runs:
-  using: 'node12'
-  main: 'lib/index.js'
+  using: 'docker'
+  image: 'Dockerfile'
