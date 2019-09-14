@@ -1,6 +1,5 @@
 // src/index.ts
-import { getInput, setFailed } from '@actions/core';
-import gh from '@actions/github'
+import { getInput, setFailed, ...test } from '@actions/core';
 import { sync } from 'glob';
 import { parse } from 'path';
 import run from './run';
@@ -14,7 +13,7 @@ async function helloWorld(): Promise<void> {
       try {
         await run(`npm test`);
       } catch {
-        console.log(gh)
+        console.log(test)
         setFailed('TEST FAILED');
       }
     }
