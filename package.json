@@ -2,7 +2,7 @@
   "name": "hello-world-action",
   "version": "0.0.1",
   "description": "hello world GitHub Node Action",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest"
