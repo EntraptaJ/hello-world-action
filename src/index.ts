@@ -23,13 +23,12 @@ async function helloWorld(): Promise<void> {
       try {
         await run(`npm test`);
       } catch {
-        const stuff = await octokit.issues.createComment({
+        await octokit.issues.createComment({
           owner: github.context.repo.owner,
           repo: github.context.repo.repo,
           issue_number: pr.number,
-          body: 'Hello World',
+          body: '`npm run test` has failed',
         });
-        console.log(`Hello `, stuff)
         setFailed('TEST FAILED');
       }
     }
