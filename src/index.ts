@@ -1,8 +1,9 @@
 // src/index.ts
-import { getInput, setFailed, ...test } from '@actions/core';
+import { getInput, setFailed,  } from '@actions/core';
 import { sync } from 'glob';
 import { parse } from 'path';
 import run from './run';
+import * as github from '@actions/github';
 
 async function helloWorld(): Promise<void> {
   try {
@@ -13,7 +14,7 @@ async function helloWorld(): Promise<void> {
       try {
         await run(`npm test`);
       } catch {
-        console.log(test)
+        console.log(github.context!.payload!.pull_request!.title)
         setFailed('TEST FAILED');
       }
     }

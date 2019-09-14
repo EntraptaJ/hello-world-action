@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "hello world GitHub Node Action",
   "scripts": {
-    "build": "parcel build --no-minify --target node --bundle-node-modules -d lib src/index.ts",
+    "build": "tsc",
     "test": "jest"
   },
   "engines": {
