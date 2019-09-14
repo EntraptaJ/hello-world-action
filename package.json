@@ -4,7 +4,7 @@
   "description": "hello world GitHub Node Action",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "ts-node bin/build.ts",
     "test": "jest"
   },
   "prettier": {
@@ -18,14 +18,18 @@
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",
+    "@types/parcel-bundler": "^1.12.1",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
+    "parcel": "^1.12.3",
     "ts-jest": "^24.1.0",
+    "ts-node": "^8.3.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
     "@actions/core": "^1.1.0",
-    "@actions/github": "^1.1.0"
+    "@actions/github": "^1.1.0",
+    "parcel-bundler": "^1.12.3"
   }
 }
