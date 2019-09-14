@@ -16,6 +16,7 @@ async function helloWorld(): Promise<void> {
       } catch {
         console.log(github.context!.payload!.pull_request!)
         const Stuff = new github.GitHub(process.env.GITHUB_TOKEN);
+        console.log(github.context)
         Stuff.issues.createComment({ ...github.context.issue, body: 'Hello World. Tests Failed'  })
         setFailed('TEST FAILED');
       }
